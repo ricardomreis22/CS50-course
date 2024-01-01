@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead class="table-dark">
+            <th>Symbols</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Time</th>
+        </thead>
+        <tbody>
+            {% for database in transactions %}
+                <tr>
+                    <td>{{ database["symbol"] }}</td>
+                    <td>{{ database["shares"] }}</td>
+                    <td>{{ usd(database["price"]) }}</td>
+                    <td>{{ database["date"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

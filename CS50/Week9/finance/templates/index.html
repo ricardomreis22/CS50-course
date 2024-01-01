@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead class="table-dark">
+            <th>Symbols</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            {% for database in transactions_db %}
+                <tr>
+                    <td>{{ database["symbol"] }}</td>
+                    <td>{{ database["shares"] }}</td>
+                    <td>{{ usd(database["price"]) }}</td>
+                    <td>{{ usd(database["price"] * database["shares"]) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <th scope="1"> Cash </th>
+                <th scope="1"> {{ usd(cash) }} </th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <th scope="1"> Total </th>
+                <th scope="1"> {{ usd(total) }} </th>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

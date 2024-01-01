@@ -1,0 +1,40 @@
+
+body {
+    background-color: lightblue;
+    margin:30;
+}
+
+input [type="button"] {
+    background-color: white;
+    font-size:10;
+}
+
+#Menu {
+    background-color: red;
+    font-weight: bold;
+    Position:absolute;
+    Bottom:0;
+    Right:0;
+}
+
+li [type="button"] {
+    background-color: orange;
+    padding: 10;
+}
+
+h3 ul {
+
+    color: grey;
+}
+
+table {
+    border: solid;
+    background-color: Yellow;
+  }
+
+
+.Winner h3 {
+    color:red;
+}
+
+
